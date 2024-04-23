@@ -25,5 +25,14 @@ app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
 
+app.use((request, response)=>{
+    
+    response.statusCode=400;
+    response.send({
+        error:"123",
+        message:"Rota invalida"
+    });
+
+})
 
 module.exports = app;
